@@ -3,7 +3,7 @@
 namespace Bookify.web.Core.Models
 {
     [Index(nameof(Name), IsUnique = true)]
-    public class Category
+    public class Publisher
     {
         public int Id { get; set; }
 
@@ -15,7 +15,5 @@ namespace Bookify.web.Core.Models
         public DateTime CreatedOn { get; set; } = DateTime.Now;
 
         public DateTime? LastUpdatedOn { get; set; }
-        public ICollection<BookCategory> Books { get; set; } = new List<BookCategory>();
-
     }
 }
