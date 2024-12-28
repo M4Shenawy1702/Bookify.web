@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CategoryViewModel>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+<div class="alert bg-light-primary border border-primary border-3 border-dashed d-flex justify-content-between w-100 p-50 mb-10">
+    <div class="d-flex align-items-center">
+        <!--begin::Content-->
+        <div class="d-flex flex-column pe-0 pe-sm-10">
+            <h5 class="mb-1">Categories</h5>
+        </div>
+        <!--end::Content-->
+    </div>
+    <div>
+        <a href="javascript:;" class="btn btn-sm btn-primary js-render-modal"
+           data-title="Add Category" data-url="/Categories/Create">
+            <i class="bi bi-plus-square-dotted"></i>
+            Add
+        </a>
+    </div>
+</div>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+        @if (!Model.Any())
+        {
+            <div class="alert alert-dismissible bg-light-warning border border-warning border-dashed d-flex flex-column flex-sm-row w-100 p-5 mb-10">
+                <div class="d-flex flex-column pe-0 pe-sm-10 align-self-center">
+                    <h5 class="mb-1">No categories found!</h5>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-row-dashed table-row-gray-300 gy-7">
+                    <thead>
+                        <tr class="fw-bold fs-6 text-gray-800">
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Created On</th>
+                            <th>Last Updated On</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var category in Model)
+                        {
+                            <partial name="_CategoryRow" model="category" />
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div><!-- /.card-body -->
+</div><!-- /.card -->
+@* to generate AntiForgeryToken *@
+@Html.AntiForgeryToken();
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+    @* <script src="~/js/categories.js" asp-asp-append-version="true"></script> *@
+}

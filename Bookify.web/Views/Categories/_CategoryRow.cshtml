@@ -1,0 +1,27 @@
+﻿@model CategoryViewModel
+<tr>
+    <td>@Model.Name</td>
+    <td>
+        <span class="badge badge-@(Model.IsDeleted ? "danger" : "success") js-status">
+            @(Model.IsDeleted ? "Deleted" : "Available")
+        </span>
+    </td>
+    <td>@Model.CreatedOn</td>
+    <td class="js-updated-on">@Model.LastUpdatedOn</td>
+    <td>
+        <a class="btn btn-sm btn-outline btn-outline-dashed btn-outline-primary btn-active-light-primary js-render-modal" 
+        @* asp-controller="Categories" asp-action="Edit" *@ 
+        @* asp-route-id="@Model.Id" *@
+        href="javascript:;"
+        data-title="Edit Category" 
+        data-url="/Categories/Edit/@Model.Id"
+        data-update="true"
+        >
+            Edit
+        </a>
+        <a class="btn btn-sm btn-outline btn-outline-dashed btn-outline-primary btn-active-light-primary js-toggle-status"
+           href="javascript:;" data-url="Categories/ToggleStatus/@Model.Id">
+            Toggle
+        </a>
+    </td>
+</tr>

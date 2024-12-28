@@ -1,0 +1,41 @@
+﻿@model AuthorFormViewModel
+
+@* @{
+    ViewData["Title"] = $"{(Model?.Id > 0 ? "Edit" : "Add")} Category";
+}
+<div class="card shadow-sm">
+    <div class="card-header">
+        <h3 class="card-title">@(Model?.Id > 0 ? "Edit" : "Add") Category</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                
+            </div>
+        </div>
+    </div>
+</div> *@
+
+
+<form method="post" asp-controller="Authors"asp-action="@(Model?.Id>0? "Edit" : "Create")"
+    data-ajax-method="post"
+    data-ajax="true"
+      
+      data-ajax-success="OnModelSuccess"
+      data-ajax-failure="ShowErrorMessage"
+      
+      > 
+    @if (Model?.Id > 0)
+    {
+        <input type="hidden" asp-for="Id" />
+    }
+    <div class="mb-5">
+        <div class="form-floating mb-2">
+            <input type="text" class="form-control" placeholder="Name" asp-for="Name" />
+            <label asp-for="Name"></label>
+        </div>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+<partial name="_ModalFooter" />
+</form>
