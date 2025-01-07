@@ -1,15 +1,25 @@
-﻿<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ModalLabel">
-                    @* Modal Title will be rendered here *@
+﻿<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0 rounded-3 shadow-lg">
+            <!-- Modal Header -->
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title d-flex align-items-center" id="ModalLabel">
+                    <i class="fas fa-info-circle me-2"></i> Modal Title
                 </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
+            <!-- Modal Body -->
             <div class="modal-body">
-                @* Modal Body will be rendered here *@
+                <div class="d-flex justify-content-center">
+                    <div class="alert alert-info text-center w-75">
+                        <i class="fas fa-lightbulb me-2"></i> This is an amazing modal with a sleek design.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+

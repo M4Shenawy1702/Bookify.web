@@ -1,26 +1,32 @@
-﻿ <!-- Navbar -->
+﻿<!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
+        <!-- Sidebar Toggle Button -->
         <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu" href="#" role="button">...<i class="fas fa-bars"></i></a>
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+                <i class="fas fa-bars">|||</i>
+            </a>
         </li>
+        <!-- Home Link -->
         <li class="nav-item d-none d-sm-inline-block">
-            <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+            <a asp-controller="Home" asp-action="Index" class="nav-link">
+                <i class="fas fa-home"></i> Home
+            </a>
         </li>
+        <!-- Contact Link -->
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="#" class="nav-link">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
         </li>
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        @*                 <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-        <i class="fas fa-th-large"></i>
-        </a>
-        </li> *@
+        <partial name="_LoginPartial" />
     </ul>
-    <partial name="_LoginPartial" />
+    <!-- Login Partial -->
+    
 </nav>
-<!-- /.navbar --> 
+<!-- /.navbar -->

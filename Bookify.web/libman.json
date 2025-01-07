@@ -58,6 +58,31 @@
         "js/dataTables.bootstrap4.js",
         "js/dataTables.bootstrap4.min.js"
       ]
+    },
+    {
+      "library": "select2@4.0.13",
+      "destination": "wwwroot/lib/select2/",
+      "files": [
+        "js/select2.min.js",
+        "css/select2.min.css"
+      ]
+    },
+    {
+      "library": "bootstrap-daterangepicker@3.0.5",
+      "destination": "wwwroot/lib/bootstrap-daterangepicker/",
+      "files": [
+        "daterangepicker.min.js",
+        "daterangepicker.min.css",
+        "moment.min.js"
+      ]
+    },
+    {
+      "library": "tinymce@7.6.0",
+      "destination": "wwwroot/lib/tinymce/"
+    },
+    {
+      "library": "expressive-annotations-validate@2.7.0",
+      "destination": "wwwroot/lib/expressive-annotations-validate/"
     }
   ]
 }

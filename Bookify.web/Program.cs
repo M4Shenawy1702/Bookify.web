@@ -1,7 +1,9 @@
 using Bookify.Web.Core.Mapping;
+using Bookify.Web.Settings;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using UoN.ExpressiveAnnotations.NetCore.DependencyInjection;
 
 namespace Bookify.web
 {
@@ -26,7 +28,9 @@ namespace Bookify.web
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(MappingProfile)));
+            builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection(nameof(CloudinarySettings)));
             builder.Services.AddRazorPages();
+            builder.Services.AddExpressiveAnnotations();
 
             var app = builder.Build();
 
