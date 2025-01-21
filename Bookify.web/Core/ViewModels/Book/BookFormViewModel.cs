@@ -26,6 +26,7 @@ namespace Bookify.web.Core.ViewModels.Book
         public IFormFile? Image { get; set; }
         //for dispaly the image when Edit or somthing else
         public string? ImageUrl { get; set; }
+        public string? ImageThumbnailUrl { get; set; }
         [MaxLength(50)]
         public string Hall { get; set; } = null!;
         [Display(Name = "Is Available For Rental ?")]
